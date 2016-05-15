@@ -18,7 +18,6 @@ router.post('/login', function (req, res, next) {
       var token = jwt.sign({ id: user._id, email: user.email }, secret);
       return res
         .status(200)
-        .cookie('jwt', token, { httpOnly: true })
         .json({ token });
     }
   })(req, res, next);

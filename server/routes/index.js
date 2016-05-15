@@ -3,10 +3,9 @@ var router = express.Router();
 var passport = require('passport');
 
 /* GET home page. */
-router.get('/secret', function (req, res, next) {
+router.get('/protected', function (req, res, next) {
+  console.log(req.headers);
   passport.authenticate('jwt', function (err, user, info) {
-    console.log(info)
-    console.log(user)
     if (err) {
       return next(err);
     }
@@ -16,7 +15,7 @@ router.get('/secret', function (req, res, next) {
     if (user) {
       return res
         .status(200)
-        .json({ secretCode: '123' });
+        .json({ secret: '123' });
     }
   })(req, res, next);
 });

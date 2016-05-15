@@ -17,14 +17,7 @@ var app = express();
 
 // JWT configration
 var options = {}
-options.jwtFromRequest = function(req) {
-    var token = null;
-    if (req && req.cookies)
-    {
-        token = req.cookies['jwt'];
-    }
-    return token;
-};
+options.jwtFromRequest = ExtractJwt.fromAuthHeader();
 options.secretOrKey = '7x0jhxt"9(thpX6'
 
 app.use(passport.initialize());

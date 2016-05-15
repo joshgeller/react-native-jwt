@@ -1,0 +1,39 @@
+{
+  "parser"  : "babel-eslint",
+  "extends" : "airbnb",
+  "env"     : {
+    "browser" : true
+  },
+  "globals" : {
+    "__DEV__"      : false,
+    "__PROD__"     : false,
+    "__DEBUG__"    : false,
+    "__DEBUG_NEW_WINDOW__" : false,
+    "__BASENAME__" : false,
+    "React": true,
+    "ReactDOM": true
+  },
+  "rules": {
+    "semi" : [2, "never"],
+    "react-in-jsx-scope": 0,
+    "comma-dangle": [1, "never"],
+    "func-names": 0,
+    "indent": [1, 2],
+    "jsx-quotes": [2, "prefer-single"],
+    "key-spacing": 0,
+    "new-cap": 0,
+    "no-else-return": 0,
+    "no-multi-spaces": 0,
+    "no-shadow": 1,
+    "no-unused-vars": 1,
+    "no-warning-comments": [1, { "terms": ["todo", "fixme", "xxx"], "location": "start" }],
+    "one-var": 0,
+    "padded-blocks": 1,
+    "quotes": [2, "single"],
+    "space-before-function-paren": [0, "never"],
+    "spaced-comment": 1,
+    "object-curly-spacing": [1, "always"],
+    "quote-props": [1, 'as-needed', { 'keywords': false, 'unnecessary': true, 'numbers': false }],
+    "react/jsx-no-bind": 1
+  }
+}
